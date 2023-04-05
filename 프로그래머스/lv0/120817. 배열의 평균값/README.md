@@ -63,5 +63,19 @@
 <li><code>numbers</code>의 원소들의 평균 값은 94.0입니다.</li>
 </ul>
 
+###문제풀이
+배열을 기반으로 값을 하나로 내뱉을때는 reduce 를 사용합니다.
+```js
+let arr = [1, 2, 3, 4, 5];
+
+let result = arr.reduce((sum, current) => sum + current, 0);
+
+alert(result); // 15
+```
+1. 함수 최초 실행시 reduce의 초기값 0이 sum에 들어가게 됩니다. current의 배열의 첫번쨰 요소가 들어오게 됩니다. 따라서 결과값은 1이 됩니다.
+2. 두번째 실행시 결과값 1이 sum에 들어가게 됩니다. 두번쨰 요소 2가 들어가게 되면서 결과값은 3이 됩니다.
+3. 누적된값과 배열에 차례대로 들어간 값들이 순차적으로 더해지면서 배열의 모든 값들을 내뱉게 됩니다.
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
