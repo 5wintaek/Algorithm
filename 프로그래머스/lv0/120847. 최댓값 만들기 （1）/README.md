@@ -62,5 +62,9 @@ Empty
 <li>두 수의 곱중 최댓값은 31 * 24 = 744 입니다.</li>
 </ul>
 
+### 문제풀이
+- 배열중 두 수의 곱중 최댓값을 찾아야 하니 arr.sort()를 이용하여 풀이하였다.
+- ```arr.sort((a,b)=>b-a)``` 를 사용하여 내림차순 
+> 출처 : 코어 자바스크립트 , https://ko.javascript.info/array-methods#ref-551
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
