@@ -69,5 +69,12 @@ Empty
 <li>[1, 3, 5]의 1번째 인덱스 3부터 2번째 인덱스 5까지 자른 [3, 5]를 return 합니다.</li>
 </ul>
 
+### 문제 풀이
+slice 메소드 사용 
+```arr.slice([start], [end])```
+ <p>"start" 인덱스부터 ("end"를 제외한) "end"인덱스까지의 요소를 복사한 새로운 배열을 반환한다. <p>
+![Pasted Graphic](https://user-images.githubusercontent.com/109938280/233828759-44abebc8-59b9-4036-9c23-339712390b46.png)
+num2+1 을 한 이유는 end 인덱스에 +1 을 해야 끝에 숫자가 짤리지 않기 떄문이다.
 
+> 출처: 코어자바스크립트, https://ko.javascript.info/array-methods#ref-761
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
