@@ -77,5 +77,5 @@ let results = arr.filter(function(item, index, array) {
 ```
 
 
-
+> 출처: 코어자바스크립트, https://ko.javascript.info/array-methods#ref-767
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
