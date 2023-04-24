@@ -72,7 +72,7 @@ let result = arr.map(function(item, index, array) {
   // 요소 대신 새로운 값을 반환합니다.
 });
 ```
-<p> 위에 map  <p> 
+<p> 위에 map의 요소를 이용하여 다음과 같이 코드를 짜보았다 <p> 
 
 ```js
 let strlist = ["We", "are", "the", "world!"].map((a) => a.length);
