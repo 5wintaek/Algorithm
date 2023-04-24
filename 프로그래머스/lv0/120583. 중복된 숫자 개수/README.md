@@ -67,7 +67,7 @@ Empty
 </ul>
 
 ### 문제 풀이
-filter를 사용하여 조건에 맞는 배열 요소들을 다시 반환하는 방법을 사용
+함수의 반환값을 true 로 사용하는 filter를 사용하여 조건에 맞는 배열 요소들을 다시 반환하는 방법을 사용
 
 ```js
 let results = arr.filter(function(item, index, array) {
@@ -78,4 +78,5 @@ let results = arr.filter(function(item, index, array) {
 
 
 > 출처: 코어자바스크립트, https://ko.javascript.info/array-methods#ref-767
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
