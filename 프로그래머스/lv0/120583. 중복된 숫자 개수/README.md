@@ -66,5 +66,16 @@ Empty
 <li>[0, 2, 3, 4] 에는 1이 0개 있습니다.</li>
 </ul>
 
+### 문제 풀이
+filter를 사용하여 조건에 맞는 배열 요소들을 다시 반환하는 방법을 사용
+
+```js
+let results = arr.filter(function(item, index, array) {
+  // 조건을 충족하는 요소는 results에 순차적으로 더해집니다.
+  // 조건을 충족하는 요소가 하나도 없으면 빈 배열이 반환됩니다.
+});
+```
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
