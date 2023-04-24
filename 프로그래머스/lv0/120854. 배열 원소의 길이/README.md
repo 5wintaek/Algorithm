@@ -62,5 +62,24 @@ Empty
 <li>["I", "Love", "Programmers."]의 각 원소의 길이인 [1, 4, 12]을 return합니다.</li>
 </ul>
 
+### 문제 풀이
+map 을 사용하여 배열 전체를 호출하여 배열로 다시 반환해주었다.
 
+각각의 item들을 전체적으로 호출하고 난 뒤, 새로운 배열을 반환해주었다. 
+
+```js
+let result = arr.map(function(item, index, array) {
+  // 요소 대신 새로운 값을 반환합니다.
+});
+```
+
+
+```js
+let strlist = ["We", "are", "the", "world!"].map((a) => a.length);
+
+console.log(strlist) // [2,3,3,6]
+```
+
+
+> 출처: 코어자바스크립트 , https://ko.javascript.info/array-methods#ref-769
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
