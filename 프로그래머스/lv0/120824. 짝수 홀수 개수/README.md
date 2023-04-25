@@ -62,5 +62,17 @@ Empty
 <li>[1, 3, 5, 7]에는 짝수가 없고 홀수가 네 개 있습니다.</li>
 </ul>
 
+### 문제 풀이
 
+for문을 이용하여 요소 한개씩 나머지값들의 +1 을 하여 짝수와 홀수 값을 구하였다.
+
+```js
+function solution(num_list) {
+    var answer = [0,0];  // (1)배열요소 2개를 각각 0,0 기본값을 넣은 후
+    for(let a of num_list){  //(2) for문을 돌려 요소를 한개씩 돌려준다
+       answer[a%2] +=1  // (3) 짝수가 2,4 라면 각각 0+1, 0+1 을 하여 = '2' 
+    }
+    return answer
+}
+```
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
