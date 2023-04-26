@@ -68,4 +68,23 @@ Empty
 </ul>
 
 
+### 문제 풀이
+처음 문제풀이는 splice 매서드를 이용하여 배열을 지우려 했지만 letter 을 splice 로 지우지를 못하였다.
+
+문자열을 배열 형태로 전환해 처리하여서 문제풀이를 진행하였다.
+
+- (1) split 매서드를 이용하여 문자열 형태를 배열 형태로 전환하였다
+- (2) 제거한 배열요소를 포함한 my_string을 다시 join 매서드를 사용하여 배열 요소를 모두 합친 후 하나의 문자열로 묶어주었다.
+
+```js
+function solution(my_string, letter) {
+    let answer = my_string.split(letter).join('')
+    return answer
+}
+```
+
+
+
+> 출처 : 코어자바스크립트, https://ko.javascript.info/array-methods#ref-38
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
