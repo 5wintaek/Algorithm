@@ -61,5 +61,26 @@ Empty
 <li>15,000원은 아이스 아메리카노 두 잔을 살 수 있고 잔돈은 4,000원입니다.</li>
 </ul>
 
+### 문제풀이
+- (1) 정수를 구해야 하기 때문에 Math.floor를 이용하여 구매할 수 있는 아이스 아메리카노에 갯수를 구하였습니다.
+- (2) 배열을 구해야 하기 때문에 return 구문 옆에 ```[ ]``` 사용함으로써 값이 바로 구해지게끔 하였습니다.
+```js
+function solution(money) {
+    return [Math.floor(money / 5500), money % 5500]
+} 
+```
+
+### 다른 문제풀이
+하나하나 나열해서 쓰고싶었던 문제풀이가 눈에 보이고 정리가 더 잘되어 가져와보았다.
+               
+```js
+function solution(moneny){
+    let a = parseInt(moneny / 5500);
+    let b = moneny % 5500;
+    return [a, b]
+}
+```
+
+> 출처 : MDN , https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
