@@ -64,5 +64,28 @@ Empty
 <li><code>message</code>의 글자 수가 11개로 최소 가로 22cm의 편지지가 필요합니다.</li>
 </ul>
 
+### 문제풀이
+- 가로크기로 한 글자당 2cm 
+- message 에 length가 한 글자당 1cm 라고 가정하고 length*2 를 해주면 한 글자당 2cm로 변환
+
+```js
+function solution(message) {
+    return message.length*2
+}
+```
+
+### 다른 문제풀이
+다른분의 문제풀이를 보고 참조 
+- 스프레드 문법을 이용하여 문져열을 문자 배열로 변환을 시킴
+- 예를들어 message = hello wolrd! 가정
+
+```js
+function solution(message) { 
+    var answer = [...message].length * 2 // 스프레드 문법을 통해 h,e,l,l,o,"",w,o,r,l,d,! * 2
+    return answer;
+}
+```
+
+> 출처: 코어자바스크립트, https://ko.javascript.info/rest-parameters-spread#spread-syntax
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
