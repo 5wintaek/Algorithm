@@ -67,5 +67,38 @@ Empty
 <li>580,000원에서 20%를 할인한 464,000원을 return 합니다.</li>
 </ul>
 
+### 오답노트
+**처음 문제를 풀었던 방식이다.**
+- (1) if문 첫번째 10만원 이상일떄 할인을 받는데 각각 30만원과 50만원도 할인율이 다르니 && 연산자를 붙여 범위를 정확하게 나눴어야 했다.
+- (2) 10만원 이하 제품은 할인이 들어가지 않기 떄문에 10만원 이하 제품도 함께 추가해주어야 한다.
+
+```js
+function solution(price) {
+  if(price >=100000){
+     price *= 0.95
+    else if(price >= 300000)
+        price *= 0.9
+    else if(price >= 500000)
+        price *= 0.8
+     }
+    return Math.floor(price)
+}  
+```
+
+### 문제풀이
+```js
+function solution(price) {
+   if(price >= 100000 && price < 300000){  // 10만원 이상일떄
+       return parseInt(price*0.95) // 정수로 반환하기 위해 parseInt 사용
+   } else if(price >= 300000 && price < 500000){
+       return parseInt(price*0.9)
+   } else if(price >= 500000){
+       return parseInt(price*0.8)
+   } else{
+       return price // 10만원 이하 제품일떄 
+   }
+}  
+```
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
