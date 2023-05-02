@@ -73,5 +73,26 @@ Empty
 <li><code>age</code>가 100이므로 "baa"를 return합니다.</li>
 </ul>
 
+### 문제풀이
+- (1)age를 문자열->배열로 바꿔준다
+- (2)a~j 까지 배열을 만들어준다
+- (3)for 문을 사용하여 // age length 까지 돌려준 뒤 // 
+
+
+### 다른 문제풀이
+
+- 52 -> "52" -> ["5","2"]. -> ["abcdefghij"[5], "abcdefghij"[2] ] -> "fc"
+- 문자열 자체도 인덱스[] 접근 가능
+
+```
+function solution(age) {
+  return age
+    .toString()
+    .split("")
+    .map((v) => "abcdefghij"[v])
+    .join("");
+}
+```
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
