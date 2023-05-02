@@ -79,5 +79,19 @@ Empty
 <li>가장 큰 변인 222가 나머지 두 변의 합 271보다 작으므로 삼각형을 완성할 수 있습니다. 따라서 1을 return합니다.</li>
 </ul>
 
+### 문제풀이
+-(1) 배열 안에 있는 요소들을 각각 오름차순으로 정렬을 해준다.
+-(2) index요소들을 비교하여 풀이해준다.
+
+```js
+function solution(sides) {
+    sides.sort((a,b)=>a-b);
+    return (sides[0] + sides[1] > sides[2] ? 1 : 2 ) 
+}
+```
+
+> 출처: 코어자바스크립트, https://ko.javascript.info/array-methods#ref-770
+
+> 출처: 벨로그, https://velog.io/@csq1458/%EC%82%BC%EA%B0%81%ED%98%95%EC%9D%98-%EC%99%84%EC%84%B1%EC%A1%B0%EA%B1%B41
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
