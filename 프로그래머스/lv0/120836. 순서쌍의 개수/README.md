@@ -61,5 +61,39 @@ Empty
 <li><code>n</code>이 100 이므로 곱이 100인 순서쌍은 (1, 100), (2, 50), (4, 25), (5, 20), (10, 10), (20, 5), (25, 4), (50, 2), (100, 1) 이므로 9를 return합니다.</li>
 </ul>
 
+##문제풀이
+- (1) 처음 정답을 넣을 수 있는 배열을 생성해줍니다.
+- (2) for문을 돌려 n까지 반복하여 나머지가 0 이 나오는 숫자들을 정답 배열에 푸쉬해줍니다. 
+- (3) 나온 배열들의 length를 return 해주면 result 값이 나옵니다.
+
+```js
+function solution(n) {
+    const result = []
+    for(let i = 1 ; i <= n ; i ++) {
+        if(n%i === 0) result.push(i)
+    }
+    return result.length
+}
+```
+
+
+### 다른 문제풀이
+- (1) 숫자이니 answer에 0을 담아주고
+- (2) for문을 돌려 n까지 반복을 돌려준 뒤 나머지가 0 이 나온 숫자들을 answer 에 + 1씩 하여 더해줌으로써 숫자들을 찾습니다.
+
+```js
+function solution(n) {
+    let answer = 0;
+    for(let i = 0;i<=n;i++){
+        if(n % i === 0 ){
+            answer += 1
+        }
+    }
+    return answer;
+}
+```
+
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
