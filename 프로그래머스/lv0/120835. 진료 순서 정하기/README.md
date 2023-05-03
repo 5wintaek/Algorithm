@@ -78,6 +78,7 @@ Empty
 - (2) sort 를 사용하여 오름차순으로 정렬해줍니다.
 - (3) map 을 사용하여 순회를 시킵니다 
 - (4) emergency = [3, 76, 24] 라고 가정한다면, a.indexOf(v) = [2,0,1]이 나옵니다. => 기존 emergency 에서 오름차순으로 indexOf를 비교했기 때문입니다.
+
 ![image](https://user-images.githubusercontent.com/109938280/235858101-d701a9b4-e5d3-4628-a097-cd6737ae27d9.png)
 
 ```js
