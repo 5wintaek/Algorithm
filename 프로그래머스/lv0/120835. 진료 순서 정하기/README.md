@@ -73,5 +73,18 @@ Empty
 <li><code>emergency</code>가 [30, 10, 23, 6, 100]이므로 응급도의 크기 순서대로 번호를 매긴 [2, 4, 3, 5, 1]를 return합니다.</li>
 </ul>
 
+###문제풀이
+- (1) spread syntax 를 사용하여 새로운 배열을 복사해줍니다.
+- (2) sort 를 사용하여 오름차순으로 정렬해줍니다.
+- (3) map 을 사용하여 순회를 시킵니다 
+- (4) emergency = [3, 76, 24] 라고 가정한다면, a.indexOf(v) = [2,0,1]이 나옵니다. => 기존 emergency 에서 오름차순으로 indexOf를 비교했기 때문입니다.
+![image](https://user-images.githubusercontent.com/109938280/235858101-d701a9b4-e5d3-4628-a097-cd6737ae27d9.png)
+
+```js
+function solution(emergency) {
+    const a = [...emergency].sort((a,b)=>b-a)
+    return emergency.map(v=>a.indexOf(v)+1)
+}
+```
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
