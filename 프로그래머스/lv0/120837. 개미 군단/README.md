@@ -72,5 +72,9 @@ Empty
 <li><code>hp</code>가 999이므로, 장군개미 199 마리 병정개미 한마리 일개미 한마리로 사냥할 수 있습니다. 따라서 201을 return합니다.</li>
 </ul>
 
+### 문제풀이
+![image](https://user-images.githubusercontent.com/109938280/236759493-0de3ba70-9020-4c33-8fd0-fe22b0a78cd6.png)
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
