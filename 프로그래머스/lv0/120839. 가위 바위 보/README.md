@@ -63,5 +63,43 @@ Empty
 <li>"205"는 순서대로 가위, 바위, 보이고 이를 모두 이기려면 바위, 보, 가위를 순서대로 내야하므로 “052”를 return합니다.</li>
 </ul>
 
+### 문제 풀이
+- (1) rsp 는 숫자 0,2,5 로 구성되어있다
+- (2) rsp.length 까지 for문으로 하나씩 돌려준다
+- (3) const item 으로 rsp 를 i번쨰 인덱스 지정
+- (4) 순서대로 item 이 2라면 answer 에 0을 집어넣어줌 
+```js
+function solution(rsp) {
+    let answer = '';
+    for(let i=0; i<rsp.length; i++){
+        const item = rsp[i] 
+        if(item === "2"){
+            answer += "0";
+        }
+         if(item === "0"){
+            answer += "5";
+        }
+         if(item === "5"){
+            answer += "2";
+        }
+    }
+    return answer
+}
+```
 
-> 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+## 다른사람 문제풀이
+```js
+// 다른사람 문제풀이
+/*
+ 가위는 2 바위는 0 보는 5
+*/
+function solution(rsp) {
+    let arr = {
+        2: 0,
+        0: 5,
+        5: 2
+    };
+    var answer = [...rsp].map(v => arr[v]).join("");
+    return answer;
+}
+```
