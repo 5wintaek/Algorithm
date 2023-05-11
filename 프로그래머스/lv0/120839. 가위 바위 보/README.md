@@ -65,9 +65,9 @@ Empty
 
 ### 문제 풀이
 - (1) rsp 는 숫자 0,2,5 로 구성되어있다
-- (2) rsp.length 까지 for문으로 하나씩 돌려준다
-- (3) const item 으로 rsp 를 i번쨰 인덱스 지정
-- (4) 순서대로 item 이 2라면 answer 에 0을 집어넣어줌 
+- (2) rsp.length 까지 for문으로 하나씩 돌려주고 총 3번을 돈다
+- (3) const item 으로 rsp 를 i번쨰 인덱스 지정 
+- (4) 3번째까지 돌고 난 후 item === "2" 라면 answer 에 0을 집어넣어준다.
 ```js
 function solution(rsp) {
     let answer = '';
@@ -76,10 +76,10 @@ function solution(rsp) {
         if(item === "2"){
             answer += "0";
         }
-         if(item === "0"){
+        else if(item === "0"){
             answer += "5";
         }
-         if(item === "5"){
+        else if(item === "5"){
             answer += "2";
         }
     }
@@ -88,6 +88,12 @@ function solution(rsp) {
 ```
 
 ## 다른사람 문제풀이
+- (1) 가위바위보 object 하나를 생성.
+- (2) rsp는 문자열 205 가 들어가있으니 spread를 사용하여 배열로 만들어줌 (split과 같다)
+- (3) map을 돌아서 총 3번을 돈다
+- (4) arr[v] => index번째로 돌아가는게 아니구 arr[2] key 값으로 들어간다
+- (5) join 을 사용하여 배열-> 문자열 변경해준다.
+
 ```js
 // 다른사람 문제풀이
 /*
@@ -99,7 +105,7 @@ function solution(rsp) {
         0: 5,
         5: 2
     };
-    var answer = [...rsp].map(v => arr[v]).join("");
+    let answer = [...rsp].map(v => arr[v]).join("");
     return answer;
 }
 ```
