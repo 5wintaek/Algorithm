@@ -81,5 +81,42 @@ Empty
 <li><code>num_list</code>가 [100, 95, 2, 4, 5, 6, 18, 33, 948] 로 길이가 9이고 <code>n</code>이 3이므로 3 * 3 배열로 변경한 [[100, 95, 2], [4, 5, 6], [18, 33, 948]] 을 return합니다.</li>
 </ul>
 
+### 문제풀이
+
+- (1) for문을 돌려 length 에 n을 나눠줌으로써 반복하게 해주고
+- (2) slice 를 통해서 배열을 잘라준다
+- (3) i가 0, n이 2부터 시작이 된다면, (0,2) => [1,2] 까지 slice 가 return 된다
+
+```js
+function solution(num_list, n) {
+  let result = [];
+
+  for (let i = 0; i < num_list.length / n; i++) {
+    result.push(num_list.slice(i * n, i * n + n));
+  }
+  return result;
+}
+
+console.log(solution([1, 2, 3, 4, 5, 6, 7, 8], 2));
+```
+![image](https://github.com/5wintaek/Algorithm/assets/109938280/d047a1ce-b875-4872-93c5-ad82c567f2e6)
+
+
+### 다른 문제풀이
+
+- 질문
+
+```js
+function solution(num_list, n) {
+    var answer = [];
+
+    while(num_list.length) {
+        answer.push(num_list.splice(0,n));
+    }
+
+    return answer;
+}
+```
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
