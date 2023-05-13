@@ -87,5 +87,15 @@ Empty
 
 <p>※ 공지 - 2023년 1월 25일 테스트 케이스가 추가되었습니다. 기존에 제출한 코드가 통과하지 못할 수도 있습니다.</p>
 
+### 문제풀이
+```js
+function solution(numbers, k) {
+  return numbers[(k - 1) * 2 % numbers.length];
+}
+```
+
+<img width="359" alt="image" src="https://github.com/5wintaek/Algorithm/assets/109938280/8439e9e9-8c69-4473-b1ba-74ab687eaca9">
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
