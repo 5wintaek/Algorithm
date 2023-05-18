@@ -65,5 +65,35 @@ Empty
 <li><code>numbers</code> 가 [4, 455, 6, 4, -1, 45, 6]이고 <code>direction</code>이 "left" 이므로 왼쪽으로 한 칸씩 회전시킨 [455, 6, 4, -1, 45, 6, 4]를 return합니다.</li>
 </ul>
 
+### 문제 풀이
+
+- (1) right 과 left 일때 값을 뱉어내야 하기 때문에 if 문을 사용하였습니다
+- (2) right 일 때 오른쪽으로 한 칸 밀어내고 맨 왼쪽으로 회전시켜야 하니 pop 을 이용하여 제거시킨다음 반환된 값을 unshift를 통해 다시 반환시킵니다
+- (3) left 일 떄 왼쪽으로 회전시켜야 하니 shift 를 이용하여 맨 앞 배열 요소를 제거시키고 반환된 값을 push 를 통해 다시 반환시킵니다.
+```js
+function solution(numbers, direction) {
+    if('right'=== direction){
+        numbers.unshift(numbers.pop());
+    } else{
+        numbers.push(numbers.shift());
+    }
+    return numbers
+}
+```
+
+### 다른 문제 풀이
+- 삼항식으로 문제풀이를 보았는데 역시 if 문을 삼항식으로 줄여쓰니 조금 더 간결하게 코드가 짜여진다. 하지만 아직까지 머리로는 생각이 잘 나지 않는다
+```js
+function solution(numbers, direction) {
+    direction === 'right' ? numbers.unshift(numbers.pop()) : numbers.push(numbers.shift());
+    return numbers;
+}
+```
+
+
+
+
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
