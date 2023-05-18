@@ -69,5 +69,21 @@ Empty
 <li>상자의 크기가 가로 10, 세로 8, 높이 6이므로 모서리의 길이가 3인 주사위는 12개 들어갈 수 있습니다.</li>
 </ul>
 
+### 문제 풀이
+- (1) 가로 세로 높이와 모서리에 길이에 맞춰 들어갈 수 있는 주사위를 구하는 것
+- (2) 가로 10cm 세로 8cm 높이6cm 일 떄, 모서리가 3이라면 가로 3cm 세로 3cm 높이 2cm 이므로 총 12개 가 들어간다
+- (3) 모서리 = n 이므로, 가로 / n , 세로 / n , 높이 / n 
+- (4) 배열 순서대로 가로 세로 높이 이므로 ```for문```을 사용하여 i 를 최대 3까지 돌린다음 각각 모서리(n)을 나누어 준 다음, 몫만 필요하니 ```Math.floor``` 로 감싸준다.
+- (5) answer 에 반환된 값이 순서대로 곱해져야 하니 ```answer *=``` 를 사용하였다.
+
+```js
+function solution(box, n) {
+    let answer = 1;
+    for(i=0; i<3; i++){
+        answer *= Math.floor(box[i] / n)
+    }
+    return answer
+}
+```
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
