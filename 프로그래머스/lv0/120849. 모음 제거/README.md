@@ -62,5 +62,17 @@ Empty
 <li>"nice to meet you"에서 모음 i, o, e, u를 모두 제거한 "nc t mt y"를 return합니다.</li>
 </ul>
 
+### 문제 풀이
+- (1) 문자열 my_string 을 배열로 만들어줍니다.
+- (2) filter 를 사용하여 모음인것들을 제거하고, includes 를 사용하여 나머지를 return 해준다음
+- (3) join 을 사용하여 배열->문자열로 바꿔줍니다.
+```js
+function solution(my_string) {
+    return [...my_string]
+    .filter((v)=>!['a','e','i','o','u'].includes(v))
+    .join('')
+}
+```
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
