@@ -75,6 +75,8 @@ Empty
 ### 문제 풀이
 
 map으로 돌렸을 떄, 문자열이 Nan으로 바뀌는 모습을 볼 수 있다.
+
+
 <img width="166" alt="image" src="https://github.com/5wintaek/Algorithm/assets/109938280/89ac2775-03dd-44ec-92ba-4a27ad0219a5">
 
 
