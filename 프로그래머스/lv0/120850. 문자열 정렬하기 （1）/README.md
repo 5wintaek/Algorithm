@@ -72,5 +72,20 @@ Empty
 <li>"abcde0"에 있는 숫자 0을 오름차순 정렬한 [0]을 return 합니다.</li>
 </ul>
 
+### 문제 풀이
+
+map으로 돌렸을 떄, 문자열이 Nan으로 바뀌는 모습을 볼 수 있다.
+<img width="166" alt="image" src="https://github.com/5wintaek/Algorithm/assets/109938280/89ac2775-03dd-44ec-92ba-4a27ad0219a5">
+
+
+-(1) string 을 split 을 통해 배열로 바꿔준다
+-(2) map으로 Number 로 바꿔주면 문자열 => Nan 으로 변환된다.
+-(3) NaN 인 부분을 제외하고 난 후 sort로 올므차순 정렬해주면 된다.
+
+```js
+function solution(my_string) {
+    return my_string.split("").filter((v) => !isNaN(v)).map((v) => v*1).sort((a,b) => a-b)
+}
+```
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
