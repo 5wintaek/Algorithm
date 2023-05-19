@@ -75,15 +75,11 @@ Empty
 ### 문제 풀이
 
 map으로 돌렸을 떄, 문자열이 Nan으로 바뀌는 모습을 볼 수 있다.
-
-
 <img width="457" alt="image" src="https://github.com/5wintaek/Algorithm/assets/109938280/885c5e58-f92d-4acf-8c5b-1acc9d642cc3">
 
-
-
--(1) string 을 split 을 통해 배열로 바꿔준다
--(2) map으로 Number 로 바꿔주면 문자열 => Nan 으로 변환된다.
--(3) NaN 인 부분을 제외하고 난 후 sort로 올므차순 정렬해주면 된다.
+- (1) string 을 split 을 통해 배열로 바꿔준다
+- (2) map으로 Number 로 바꿔주면 문자열 => Nan 으로 변환된다.
+- (3) NaN 인 부분을 제외하고 난 후 sort로 올므차순 정렬해주면 된다.
 
 ```js
 function solution(my_string) {
