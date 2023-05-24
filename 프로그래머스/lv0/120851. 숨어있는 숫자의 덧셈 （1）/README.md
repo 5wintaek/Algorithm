@@ -71,4 +71,25 @@ Empty
 </ul>
 
 
+### 문제 풀이 
+(1) 처음에 [...my_string] 으로 문제풀이를 시도해보려 했지만 아직 혼자서는 진행이 잘 안되는거 같아 split 으로 진행하였다
+(2) split 으로 배열 변환 후, map 을 돌려 isNaN 으로 확인해준다. -> 배열 안에 있는 문자열들을 map 으로 돌리면 NaN 처리가 된다.
+(3) ```!isNan```이면 answer 에 더해주고 아니라면 0을 처리해준다. 
+
+```js
+function solution(my_string) {
+    let answer = 0;
+    my_string.split("").map(e => !isNaN(e)? answer += Number(e) : 0)
+    return answer;
+}
+```
+
+### 다른 문제 풀이
+spread 문법을 이용하여 문제 풀이를 하고 싶었는데 좋은 문제풀이가 있어서 참고하였다.
+```js
+function solution(my_string) {
+    return [...my_string].reduce((acc,cur)=>Number(cur) ? +acc + +cur : acc, 0)
+}
+```
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
