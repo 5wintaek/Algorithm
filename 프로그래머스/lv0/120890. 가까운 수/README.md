@@ -70,4 +70,24 @@ Empty
 <p>※ 공지 - 2023년 3월 29일 테스트 케이스가 추가되었습니다. 기존에 제출한 코드가 통과하지 못할 수도 있습니다.</p>
 
 
+```js
+function solution(array, n) {
+    array.sort((a, b) => a-b);
+    let a = 0;
+    let b = 0;
+    let answer = [];
+
+    for (let i = 0; i < array.length; i++) {
+        answer.push(Math.abs(n-array[i]))
+        a = Math.min(...answer);
+        b = answer.indexOf(a)
+    } return array[b]
+}
+```
+
+
+
+
+
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
