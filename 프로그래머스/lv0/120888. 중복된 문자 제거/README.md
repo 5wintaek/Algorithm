@@ -65,5 +65,14 @@ Empty
 <li>"We are the world"에서 중복된 문자 "e", " ", "r" 들을 제거한 "We arthwold"을 return합니다.</li>
 </ul>
 
+### 문제 풀이
+(1) 문자열 자체에서도 Set 을 이요하여 문제 풀이를 하였다
+(2) spread 를 이용하여 배열로 만든 후 중복된 값을 제거하여 다시 join 을 넣어 문자열로 바꿔주었다.
+
+```js
+function solution(my_string) {
+    return [...new Set(my_string)].join('');
+}
+```
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
