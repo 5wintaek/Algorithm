@@ -96,4 +96,35 @@ Empty
 <p>※ 공지 - 2022년 11월 30일 제한사항 및 테스트 케이스가 수정되었습니다.</p>
 
 
+### 문제 풀이
+스택 구조를 이용해서 문제 풀이
+(1) split 을 이용하여 문자열을 배열로 변환
+(2) 빈 배열을 하나 만들어서 한개씩 S를 넣어줌
+(3) for문을 이용하여 하나씩 비교해주면서 넣는데, 이 때 input에 Z가 들어가면 뺴주는 형식
+```js
+20
+function solution(s) {
+    const input = s.split(" ");
+
+    let stack = [];
+
+    for(let index = 0; index < input.length; index++){
+        if(input[index] === "Z"){
+            stack.pop();
+
+            continue;
+        }
+
+        stack.push(input[index]);
+    }
+
+    const sum = stack.reduce((acc, curr) => {
+        return acc + Number(curr);
+    }, 0);
+
+    return sum; 
+}
+```
+
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
