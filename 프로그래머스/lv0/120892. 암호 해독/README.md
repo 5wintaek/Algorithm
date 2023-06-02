@@ -75,4 +75,19 @@ Empty
 </ul>
 
 
+### 문제 풀이
+(1) code - 1 을 한 이유는 index 는 0 부터 시작하니 즉 index[3] , 네 번쨰부터 적용이 되기 떄문에 code -1 을 해주었습니다. 
+(2) i += code 를 해줘야 차례대로 3,7 ~~~ 더해지기 떄문에 기준을 주었습니다.
+
+```js
+function solution(cipher, code) {
+   let answer = ''
+   for(let i= code-1; i < cipher.length; i+=code){
+       answer += cipher[i]
+   }
+    return answer
+}
+```
+
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
