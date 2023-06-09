@@ -1,1 +1,4 @@
-const solution = array => [Math.max(...array), array.indexOf(Math.max(...array))]
+function solution(array) {
+    let max = Math.max(...array);
+    return [max, array.indexOf(max)];
+}
