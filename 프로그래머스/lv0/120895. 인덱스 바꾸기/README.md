@@ -70,5 +70,28 @@ Empty
 <li>"I love you"의 3번째 인덱스 "o"와 " "(공백)을 바꾸면 "I l veoyou"입니다.</li>
 </ul>
 
+### 문제 풀이
+
+문제풀이에 앞서 저는 for문을 통해서 하나하나 비교해서 자리를 바꿔주려 했지만 그 방법은 틀린 방법임을 알았습니다.
+
+(1) spread 문법을 통해서 문자열->배열로 변환하였습니다
+
+<img width="420" alt="image" src="https://github.com/5wintaek/Algorithm/assets/109938280/94a59ebb-d451-49d1-836b-e0ca3c7af62e">
+
+(2) 구조 분해 할당을 이용하여 , 인덱스에 접근하여 num 1과 num2에 위치를 바꿔주었습니다.
+
+<img width="495" alt="image" src="https://github.com/5wintaek/Algorithm/assets/109938280/a852fbe7-f559-4435-8091-4495369297b5">
+
+(3) 나온 배열의 값들을 다시 문자열로 바꿔주기 위해서 join 을 사용하였습니다. 
+
+
+```js
+function solution(my_string, num1, num2) {
+      const copy = [...my_string];
+      [copy[num1],copy[num2]] = [copy[num2],copy[num1]];
+      return copy.join('');
+    }
+```
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
