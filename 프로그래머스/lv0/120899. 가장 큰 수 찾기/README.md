@@ -63,5 +63,30 @@ Empty
 <li>9, 10, 11, 8 중 가장 큰 수는 11이고 인덱스 2에 있습니다.</li>
 </ul>
 
+### 문제 풀이
+
+(1) 최댓값을 찾기 위해서 array 에서 Math.max 값을 써줍니다.
+
+(2) arr.indexOf(item, from)는 인덱스 from부터 시작해 item(요소)을 찾습니다. 요소를 발견하면 해당 요소의 인덱스를 반환하고, 발견하지 못했으면 -1을 반환합니다.
+
+
+```js
+function solution(array) {
+    let max = Math.max(...array);
+    return [max, array.indexOf(max)];
+}
+```
+
+
+
+### 다른 사람 문제 풀이
+
+```js
+function solution(array) {
+    return [Math.max(...array), array.indexOf(Math.max(...array))]
+}
+```
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
