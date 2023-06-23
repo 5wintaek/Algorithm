@@ -67,5 +67,29 @@ Empty
 <li>같은 원소가 없으므로 0을 return합니다.</li>
 </ul>
 
+### 문제 풀이
+
+filter
+
+find 메서드는 함수의 반환 값을 true로 만드는 단 하나의 요소를 찾습니다.
+
+조건을 충족하는 요소가 여러 개라면 arr.filter(fn)를 사용하면 됩니다.
+
+filter는 find와 문법이 유사하지만, 조건에 맞는 요소 전체를 담은 배열을 반환한다는 점에서 차이가 있습니다.
+
+let results = arr.filter(function(item, index, array) {
+  // 조건을 충족하는 요소는 results에 순차적으로 더해집니다.
+  // 조건을 충족하는 요소가 하나도 없으면 빈 배열이 반환됩니다.
+});
+
+arr.includes(item, from)는 인덱스 from부터 시작해 item이 있는지를 검색하는데, 해당하는 요소를 발견하면 true를 반환합니다.
+
+
+```js
+function solution(s1, s2) {
+    return s1.filter((e)=>s2.includes(e)).length
+}
+```
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
