@@ -65,4 +65,34 @@ Empty
 </ul>
 
 
+### 문제풀이
+
+(1) ```const splited = my_string.split(" ");``` 를 한 이유는 for문을 돌려서 각각 배열들을 더해주기 위함입니다.
+ 
+(2)``` let ans = Number(splited[0]);``` 첫번째 index 값을 넣어줍니다
+
+(3) forEach 문을 돌려 my_string 을 index 순차적으로 더해줍니다.
+
+(4) + , - 가 나올 경우 index 다음 숫자를 가져온 후 연산자에 맞게 계산해줍니다.
+
+```js
+function solution(my_string) {
+    const splited = my_string.split(" ");
+    
+    let ans = Number(splited[0]);
+    
+    splited.forEach((item, index) => {
+        if(item === "+"){
+            ans += Number(splited[index + 1]);
+        }
+        
+        if(item === "-"){
+            ans -= Number(splited[index + 1]);
+        }
+    })
+    
+    return ans;
+}
+```
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
