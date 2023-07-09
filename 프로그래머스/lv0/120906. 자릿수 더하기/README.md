@@ -61,5 +61,26 @@ Empty
 <li>9 + 3 + 0 + 2 + 1 + 1 = 16을 return합니다.</li>
 </ul>
 
+### 문제풀이
+(1) 숫자열을 문자열로 바꿔주기 위해 toString()을 사용하였습니다
+
+(2) for문을 돌려 num 안에 있는 숫자들을 각각 꺼내준 다음 차례대로 더해주었습니다.
+
+(3) parseInt로 감싸준 이유는 num이 문자열로 인식을 하기 때문에 숫자로 바꿔주기 위해 parseInt를 사용하였습니다.
+
+```js
+function solution(n) {
+    let answer = 0
+    let num = n.toString()
+    
+    for(let i=0; i<num.length; i++){
+        answer += parseInt(num[i])
+    }
+    return answer;
+}
+```
+
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
