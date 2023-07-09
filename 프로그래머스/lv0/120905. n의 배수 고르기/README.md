@@ -78,4 +78,33 @@ Empty
 </ul>
 
 
+### 문제 풀이
+(1) 문제풀이 조건 중 배열을 return 을 해야하니 let answer = [] 를 해줍니다.
+
+(2) numlist 중 n의 배수들을 남긴 값일 return을 해주어야 합니다. n % numlist === 0 이라면 n의 배수의 값이므로 미리 조건문에 사용해줍니다. 
+
+(3) for문을 돌려 numlist.length 만큼 하나씩 배열들을 꺼내줍니다. 
+
+(4) 꺼낸 배열들을 const item = numlist[i] 를 통해서 하나씩 꺼내어 조건문을 넣어 비교해줍니다.
+
+(5) 문제풀이 (2) 에서 사용한 구조를 조건문에 넣어줍니다.
+
+(6) 배열들을 차례대로 넣어야 하기 때문에 push 를 이용하여 answer에 값을 집어넣어줍니다.
+
+```js
+function solution(n, numlist) {
+    let answer = []
+    for(let i=0; i<numlist.length; i++){
+        const item = numlist[i]
+        if(item % n === 0){
+            answer.push(item)
+        }
+    }
+    return answer
+}
+
+// ex) : 10% 3 ! == 0 -> 10은 3의 배수가 아니다
+```
+
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
