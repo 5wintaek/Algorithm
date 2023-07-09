@@ -77,5 +77,30 @@ Empty
 <li>123456에 7은 없으므로 -1을 return 합니다.</li>
 </ul>
 
+### 다른 사람의 문제 풀이
+
+(1) 숫자열인 num 을 문자열로 반환하기 위해서 toString() 을 사용해준다.
+
+(2) arr.includes(item, from) 를 이용하여 k 가 나오면 if문이 실행되게 적어줍니다.
+
+(3) k가 나오면 true 로 반환이 되니 조건문 안에는 arr.indexOf(item, from) 를 활용하여 해당 요소의 인덱스를 반환해줍니다. k가 나온 숫자를 return 해주어야 하니 +1 을 더해줍니다. (인덱스 요소를 반환하여서 +1 을 하였습니다 )
+
+(4) 문제 요건중에 k가 말하는 숫자가 없다면 -1 을 return 을 해주어야 하니 else 문에 return -1 을 해줍니다.
+
+```js
+function solution(num, k) {
+    let answer = num.toString()
+    if (answer.includes(k)) {
+        return answer.indexOf(k) + 1;
+    } else {
+        return -1;
+    }
+}
+```
+
+
+### 출처
+https://taegon.kim/archives/10387
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
