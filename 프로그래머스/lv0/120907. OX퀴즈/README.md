@@ -68,4 +68,40 @@ Empty
 </ul>
 
 
+### 문제풀이
+(1) 인덱스를 하나씩 꺼내어 비교를 해줍니다. 
+
+(2) 첫번쨰 숫자 배열[0] , 연산자[1], 두번쨰 숫자 배열[2], 결과값 도출[4]
+
+(3) if 문을 사용하여 + 와 - 일때 조건문을 걸어줍니다. 
+```js
+function solution(quiz) {
+    const answer = []
+    for(let i=0; i<quiz.length; i++){
+        const item = quiz[i]
+        const itemArr = item.split(' ') // 공백
+        const firstNum = Number(itemArr[0]) // 첫번째숫자 배열
+        const op = itemArr[1] // 두번쨰 연산자
+        const secondNum = Number(itemArr[2])
+        const result = Number(itemArr[4]) // 결과값
+        if(op === '+'){
+            if(firstNum + secondNum === result){
+                answer.push('O')
+            }else{
+                answer.push('X')
+            }
+        }else{
+             if(firstNum - secondNum === result){
+                answer.push('O')
+            } else{
+                answer.push('X')
+        }
+    } 
+ }
+    return answer
+}
+```
+
+
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
