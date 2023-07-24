@@ -62,4 +62,16 @@ Empty
 </ul>
 
 
+### 문제풀이
+Math.sqrt는 주어진 숫자에 루트를 씌워 숫자의 제곱근을 반환해준다. 주어진 숫자가 음수면 NaN을 반환한다.
+
+Math.sqrt는 꼭 값이 정수를 반환하는것이 아니므로, 1로 나눴을 때 나머지가 0이거나 isInteger()를 사용해 해당값이 정수인지 판별하기 위해 사용했다.
+
+
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
+
+
+
+
+
