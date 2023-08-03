@@ -67,7 +67,7 @@ Empty
 </ul>
 
 ### 문제 풀이
-함수의 반환값을 true 로 사용하는 filter를 사용하여 조건에 맞는 배열 요소들을 다시 반환하는 방법을 사용
+함수의 반환값을 true 로 사용하는 filter를 사용하여 조건에 맞는 배열 요소들을 다시 반환하는 방법을 사용 체크 
 
 ```js
 let results = arr.filter(function(item, index, array) {
