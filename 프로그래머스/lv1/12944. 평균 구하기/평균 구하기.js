@@ -10,3 +10,9 @@ function solution(arr) {
     avarage = sum / arr.length
     return avarage
 }
+
+
+// 다른사람의 풀이
+// function average(array){
+//   return array.reduce((a,b) => a+b) / array.length;
+// }
