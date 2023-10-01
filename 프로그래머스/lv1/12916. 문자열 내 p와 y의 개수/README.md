@@ -56,5 +56,11 @@
 
 <p>※ 공지 - 2021년 8월 23일 테스트케이스가 추가되었습니다.</p>
 
+### 문제 풀이
+(1) toLowerCase() 로 모두 소문자로 통일한다
+(2) split() 을 통해 문자열을 구분할 수 있다.
+(3) 삼항연산자를 통해 길이가 같다면 true 아니면 false 로 return 한다
+
+
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
