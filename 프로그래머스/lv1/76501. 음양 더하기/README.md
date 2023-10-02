@@ -76,4 +76,7 @@
 </ul>
 
 
+### 문제풀이
+signs 와 absoultes 갯수가 같기에 for문에서 signs 갯수만큼 증가시켜 주면서 풀이했습니다.
+
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
