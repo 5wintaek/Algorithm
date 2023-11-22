@@ -10,4 +10,5 @@ function solution(numbers) {
     return numbers.reduce((a, b) => [...a, b * 2], []);
 }
 // numbers를 spread연산자를 통해 차례대로 하나씩 풀어준다
-// b에서 각 currentValue들을 집어넣어서 빈 배열에 넣어준다.
+// a에서 1,2,3,4,5 가 차례대로 들어간다
+// b가 1부터 5까지 곱해줌
