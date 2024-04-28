@@ -1,31 +1,60 @@
 function solution(rows, columns, queries) {
-  var answer = []
-  const board = Array(rows)
-    .fill(0)
-    .map(() => Array(columns))
-
-  for (let i = 0; i < board.length; i++) {
-    for (let j = 0; j < board[i].length; j++) {
-      board[i][j] = i * columns + j + 1
+  const arrays = Array.from(Array(rows), () => Array(columns).fill(0));
+  let val = 0;
+  const maps = arrays.map((line) =>
+    line.map(() => ++val)
+  )
+  const ans = [];
+  queries.forEach(([x1, y1, x2, y2]) => {
+    const startX = x1 - 1;
+    const startY = y1 - 1;
+    const endX = x2 - 1;
+    const endY = y2 - 1;
+    //
+    let min = maps[endX][startY];
+    const first = maps[startX][startY];
+    min = Math.min(min, first);
+    let i = startX;
+    for (; i < endX; ++i) {
+      maps[i][startY] = maps[i + 1][startY];
+      min = Math.min(min, maps[i + 1][startY]);
     }
-  }
-
-  queries.forEach(query => {
-    const [x1, y1, x2, y2] = query.map(pos => pos - 1)
-    const queue = []
-
-    for (let i = 0; i < y2 - y1; i++) queue.push(board[x1][y1 + i])
-    for (let i = 0; i < x2 - x1; i++) queue.push(board[x1 + i][y2])
-    for (let i = 0; i < y2 - y1; i++) queue.push(board[x2][y2 - i])
-    for (let i = 0; i < x2 - x1; i++) queue.push(board[x2 - i][y1])
-
-    queue.unshift(queue.pop())
-    answer.push(Math.min(...queue))
-
-    for (let i = 0; i < y2 - y1; i++) board[x1][y1 + i] = queue.shift()
-    for (let i = 0; i < x2 - x1; i++) board[x1 + i][y2] = queue.shift()
-    for (let i = 0; i < y2 - y1; i++) board[x2][y2 - i] = queue.shift()
-    for (let i = 0; i < x2 - x1; i++) board[x2 - i][y1] = queue.shift()
+    //
+    const second = maps[startX][endY];
+    min = Math.min(min, second);
+    let j = endY;
+    for (; j > startY; --j) {
+      maps[startX][j] = maps[startX][j - 1];
+      min = Math.min(min, maps[startX][j - 1]);
+    }
+    maps[startX][j + 1] = first;
+    //
+    const third = maps[endX][endY];
+    min = Math.min(min, third);
+    let k = endX;
+    for (; k > startX; --k) {
+      maps[k][endY] = maps[k - 1][endY];
+      min = Math.min(min, maps[k - 1][endY]);
+    }
+    maps[k + 1][endY] = second;
+    //
+    let l = startY;
+    for (; l < endY; ++l) {
+      maps[endX][l] = maps[endX][l + 1];
+      min = Math.min(min, maps[endX][l + 1]);
+    }
+    maps[endX][l - 1] = third;
+    ans.push(min);
   })
-  return answer
+  return ans;
+}
+
+function print(maps, rows, columns) {
+  for (let x = 0; x < rows; ++x) {
+    let s = '';
+    for (let y = 0; y < columns; ++y) {
+      s += maps[x][y] + '\\';
+    }
+    console.log('line: ', s);
+  }
 }
