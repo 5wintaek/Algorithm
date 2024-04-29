@@ -1,38 +1,61 @@
-const readline = require("readline");
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout,
-});
-
-const input = [];
-rl.on("line", function (line) {
-  input.push(line);
-}).on("close", function () {
-  solution();
-  process.exit();
-});
-// a = 1 1 2 2 2 8
-// b = 0 1 2 2 2 7
-// c = 1 0 0 0 0 1
-
-function solution() {
-  const whiteChess = input[0].split(" ").map(Number);
-  const chess = [1, 1, 2, 2, 2, 8];
-  let answer = "";
-  let i = 0;
-  while (i < whiteChess.length) {
-    const item = chess[i] - whiteChess[i];
-    i++;
-    answer += item + " ";
-  }
-  console.log(answer);
+function solution(rows, columns, queries) {
+  const arrays = Array.from(Array(rows), () => Array(columns).fill(0));
+  console.log(arrays);
+  let val = 0;
+  const maps = arrays.map((line) => line.map(() => ++val));
+  const ans = [];
+  queries.forEach(([x1, y1, x2, y2]) => {
+    const startX = x1 - 1;
+    const startY = y1 - 1;
+    const endX = x2 - 1;
+    const endY = y2 - 1;
+    //
+    let min = maps[endX][startY];
+    const first = maps[startX][startY];
+    min = Math.min(min, first);
+    let i = startX;
+    for (; i < endX; ++i) {
+      maps[i][startY] = maps[i + 1][startY];
+      min = Math.min(min, maps[i + 1][startY]);
+    }
+    //
+    const second = maps[startX][endY];
+    min = Math.min(min, second);
+    let j = endY;
+    for (; j > startY; --j) {
+      maps[startX][j] = maps[startX][j - 1];
+      min = Math.min(min, maps[startX][j - 1]);
+    }
+    maps[startX][j + 1] = first;
+    //
+    const third = maps[endX][endY];
+    min = Math.min(min, third);
+    let k = endX;
+    for (; k > startX; --k) {
+      maps[k][endY] = maps[k - 1][endY];
+      min = Math.min(min, maps[k - 1][endY]);
+    }
+    maps[k + 1][endY] = second;
+    //
+    let l = startY;
+    for (; l < endY; ++l) {
+      maps[endX][l] = maps[endX][l + 1];
+      min = Math.min(min, maps[endX][l + 1]);
+    }
+    maps[endX][l - 1] = third;
+    ans.push(min);
+  });
+  return ans;
 }
 
-// for (let i = 0; arr.length > i; i += 2) {
-//   arr[i] = "a";
-// }
-// let i = -1;
-// while (++i < arr.length) {
-//   arr[i] = "a";
-//   // console(arr[i]);
-// }
+solution(6, 6, [([2, 2, 5, 4], [3, 3, 6, 6], [5, 1, 6, 3])]);
+
+function print(maps, rows, columns) {
+  for (let x = 0; x < rows; ++x) {
+    let s = "";
+    for (let y = 0; y < columns; ++y) {
+      s += maps[x][y] + "\\";
+    }
+    // console.log("line: ", s);
+  }
+}
