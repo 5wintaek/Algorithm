@@ -1,15 +1,10 @@
-# 코딩테스트
+## 프로그래머스 코딩 테스트문제 풀이 전략
 
-### Level 0
+### 1. 배열
 
-- [x] 나머지 구하기
-- [x] 두 수의 곱
-- [x] 양꼬치
-- [x] 피자나눠먹기
-- [x] 두 수의 차
-- [x] 두 수의 합
-- [x] 몫 구하기
-- [x] 숫자 비교하기
-- [x] 두 수의 나눗셈
-- [x] 분수의 덧셈
-- [x] 배열 두 배 만들기
+| 문제                           | 링크                                                            |
+| :----------------------------- | :-------------------------------------------------------------- |
+| 행렬 테두리 회전하기 - Level 2 | https://school.programmers.co.kr/learn/courses/30/lessons/77485 |
+| 삼각 달팽이 - Level 2          | https://school.programmers.co.kr/learn/courses/30/lessons/68645 |
+| 거리두기 확인하기 - Level 2    | https://school.programmers.co.kr/learn/courses/30/lessons/81302 |
+| 행렬의 곱셈 - Level 2          | https://school.programmers.co.kr/learn/courses/30/lessons/12949 |
