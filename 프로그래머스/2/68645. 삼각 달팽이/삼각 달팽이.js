@@ -1,8 +1,7 @@
 function solution(n) {
   let answer = [];
   let count = 0;
-  let arr = Array.from({ length: n }, (_, index) => new Array(index + 1).fill(0));
-  console.log(arr);
+  const arr = Array.from({ length: n }, (_, index) => new Array(index + 1).fill(0));
   let currentX = -1;
   let currentY = 0;
   
