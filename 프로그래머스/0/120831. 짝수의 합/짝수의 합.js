@@ -1,7 +1,15 @@
 function solution(n) {
-    let result = 0
-    for(let i=0; i<=n; i++){
-        if(i%2 === 0) result += i;
+   // return Array(n).fill().map((_,i)=> i+1).filter( v=> v % 2 ===0).reduce((a,c) => a+c,0)
+    
+    let answer = 0;
+    for(let i=2; i<=n; i+=2){
+        answer += i
+        console.log(answer)
     }
-    return result;
+    
+    return answer
 }
+
+
+
+
