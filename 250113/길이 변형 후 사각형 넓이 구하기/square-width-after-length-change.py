@@ -1,10 +1,9 @@
 a,b = map(int,input().split())
 
-num = a + 8
-triple = b * 3
-z = num * triple
+a = a + 8
+print(a)
 
-print(num)
-print(triple)
-print(z)
+b = b * 3
+print(b)
 
+print(a * b)
